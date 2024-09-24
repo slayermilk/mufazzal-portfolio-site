@@ -1,0 +1,316 @@
+body {
+  margin: 0;
+}
+
+/* General Styles */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+  padding: 10px 0; /* Space around the title */
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+  background-color: #413c3c;
+  display: flex;
+  flex-direction: column; /* Stack h1 and nav vertically */
+  align-items: center; /* Center the content horizontally */
+  padding: 10px 0;
+}
+
+/* Navbar Styles */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the links */
+  padding-top: 10px; /* Add some space above the navbar */
+}
+
+nav ul {
+  display: flex; /* Use flexbox for horizontal layout */
+  gap: 15px; /* Space between nav links */
+  list-style: none; /* Remove bullets from the list */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: white; /* White text color */
+  font-size: 1.2rem; /* Set font size */
+  padding: 10px 15px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  nav ul {
+    gap: 10px; /* Reduce space between links for smaller screens */
+  }
+
+  nav a {
+    font-size: 1rem; /* Adjust font size for mobile */
+    padding: 8px 10px; /* Adjust padding */
+  }
+}
+
+/* Main Content Styles */
+main {
+  padding-top: 50px;
+}
+
+main .all-photos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 25px auto;
+  padding: 20px 10px;
+}
+
+.all-photos img {
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 0.5ms ease-in-out; 
+}
+
+/* Button Styles */
+main > .all-photos > button {
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Overlay Effect */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.round-edge:hover img {
+  opacity: 0.3; 
+}
+
+.round-edge:hover .image-overlay {
+  opacity: 1; 
+}
+
+.overlay-text {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@media (max-width: 768px) {
+  .round-edge img {
+    opacity: 0.3; /* Make the image faded by default on mobile */
+  }
+
+  .image-overlay {
+    opacity: 1; /* Always show the overlay on mobile */
+    display: flex;
+  }
+}
+
+/*Footer Style*/
+
+footer {
+  width: 100%;
+  background-color: #413c3c;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer h5 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.footer-connect {
+  display: flex;
+  justify-content: center; /* Evenly space the boxes */
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 5px;
+}
+
+.connect-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #282828;
+  border-radius: 10px;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth pop-up effect */
+  width: 120px;
+  height: 120px;
+  justify-content: center;
+}
+
+.connect-box img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.connect-box:hover {
+  transform: scale(1.1); /* Gently pop-up effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.connect-box p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-connect {
+    flex-wrap: wrap; /* Stack the boxes vertically on mobile */
+  }
+
+  .connect-box {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+.collapse {
+  background-color: #413c3c;
+}
+
+/* Galleries css */
+main .gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 5px auto;
+  padding: 20px 10px;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gallery::after {
+  content: "";
+  width: 850px;
+}
+
+/* About me css */
+/* Container for the image and details */
+.my-details {
+  display: flex;
+  align-items: flex-start; /* Align image and text at the top */
+  gap: 20px; /* Space between image and text */
+  max-width: 1000px; /* Set a maximum width */
+  margin: 0 auto; /* Center content on the page */
+  padding: 20px; /* Add some padding around the container */
+  flex-wrap: nowrap; /* Prevents wrapping unless the screen is very small */
+}
+
+/* Styling for the image */
+.my-details img {
+  width: 600px; /* Set specific width */
+  height: 400px; /* Set specific height */
+  border-radius: 10px; /* Add rounded corners */
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
+  object-position: top; /* Focus on the top part of the image */
+  flex-shrink: 0; /* Prevent the image from shrinking below its set size */
+}
+
+/* Styling for the text */
+.my-details p {
+  flex: 1; /* Allow the text to take up remaining space */
+  text-align: left; /* Left-align the text */
+  font-size: 1rem; /* Font size for readability */
+  line-height: 1.6; /* Spacing between lines for better readability */
+  margin: 0; /* Remove default paragraph margins */
+}
+
+/* Styling for the "About Me" header */
+.about-me {
+  display: flex;
+  justify-content: center; /* Centers the text horizontally */
+  font-size: 45px; /* Large font size for the header */
+  font-family: Arial, Helvetica, sans-serif; /* Set font family */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .my-details {
+    flex-direction: column; /* Stack image and text on smaller screens */
+  }
+
+  .my-details img {
+    width: 100%; /* Make the image responsive on smaller screens */
+    height: auto; /* Maintain the aspect ratio */
+    object-position: top; /* Keep the top part of the image in focus */
+  }
+
+  .my-details p {
+    width: 100%; /* Ensure the text takes full width */
+  }
+}
+
+/* Services css */
+.form-container {
+  width: 90%;
+  max-width: 640px; 
+  background-color: #1e1e1e; 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+iframe {
+  width: 100%;
+  height: 800px; 
+  border: none;
+  border-radius: 10px;
+}
+
+
