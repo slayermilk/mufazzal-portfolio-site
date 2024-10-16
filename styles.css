@@ -85,6 +85,13 @@ main .all-photos {
   transition: opacity 0.5ms ease-in-out; 
 }
 
+@media (max-width: 768px) {
+  .all-photos img {
+    height: auto; /* Keeps the height proportional to the width */
+    max-width: 100%; /* Make sure it uses full width */
+  }
+}
+
 /* Button Styles */
 main > .all-photos > button {
   border-radius: 15px;
@@ -238,6 +245,13 @@ main .gallery {
 .gallery::after {
   content: "";
   width: 850px;
+}
+
+@media (max-width: 768px) {
+  .gallery img {
+    height: auto; /* Keeps the height proportional to the width */
+    max-width: 100%; /* Ensure full width for mobile */
+  }
 }
 
 /* About me css */
